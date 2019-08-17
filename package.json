@@ -15,7 +15,8 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "posthtml": "^0.11.4"
+    "posthtml": "^0.11.4",
+    "posthtml-parser": "^0.4.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
