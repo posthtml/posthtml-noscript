@@ -7,7 +7,7 @@ exports[`posthtmlNoscript plugin matches snapshot 1`] = `
 `;
 
 exports[`posthtmlNoscript plugin matches snapshot – "head" as parent 1`] = `
-"<head><noscript><link rel=\\"stylesheet\\" href=\\"fallbackStyles.css\\"></noscript>
-          <script src=\\"https://use.typekit.net/XYZ.js\\">try { Typekit.load({ async: true }; } catch(e) {}</script>
+"<head><noscript><link rel=\\"stylesheet\\" href=\\"fonts.css\\"></noscript>
+          <script src=\\"https://use.typekit.net/XYZ.js\\">try { Typekit.load({ async: true }); } catch(e) {}</script>
         </head>"
 `;

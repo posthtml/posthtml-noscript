@@ -28,13 +28,13 @@ describe('posthtmlNoscript plugin', () => {
     posthtml()
       .use(
         noscript({
-          content: '<link rel="stylesheet" href="fallbackStyles.css" />',
+          content: '<link rel="stylesheet" href="fonts.css" />',
           parent: 'head'
         })
       )
       .process(
         `<head>
-          <script src="https://use.typekit.net/XYZ.js">try { Typekit.load({ async: true }; } catch(e) {}</script>
+          <script src="https://use.typekit.net/XYZ.js">try { Typekit.load({ async: true }); } catch(e) {}</script>
         </head>`
       )
       .then((result: { html: string }) => {
