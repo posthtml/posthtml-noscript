@@ -47,6 +47,13 @@ posthtml()
   .then(result => fs.writeFileSync('./after.html', result.html));
 ```
 
+### Options
+
+| Name      | Kind                                | Description                                                 |
+| --------- | ----------------------------------- | ----------------------------------------------------------- |
+| `content` | **required** `string`               | Markup to insert in the "noscript" tag                      |
+| `parent`  | optional "head" (default is "body") | Specifiy the parent element to insert the noscript content. |
+
 ### Contributing
 
 See the [PostHTML Guidelines](https://github.com/posthtml/posthtml/tree/master/docs).
