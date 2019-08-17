@@ -23,4 +23,22 @@ describe('posthtmlNoscript plugin', () => {
         expect(result.html).toMatchSnapshot();
       });
   });
+
+  it('matches snapshot – "head" as parent', () => {
+    posthtml()
+      .use(
+        noscript({
+          content: '<link rel="stylesheet" href="fallbackStyles.css" />',
+          parent: 'head'
+        })
+      )
+      .process(
+        `<head>
+          <script src="https://use.typekit.net/XYZ.js">try { Typekit.load({ async: true }; } catch(e) {}</script>
+        </head>`
+      )
+      .then((result: { html: string }) => {
+        expect(result.html).toMatchSnapshot();
+      });
+  });
 });

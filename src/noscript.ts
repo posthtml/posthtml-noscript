@@ -7,14 +7,23 @@ function noscript(options?: IOptions) {
   }
 
   return function plugin(tree: ITree) {
-    tree.match({ tag: 'body' }, node => {
+    let tag = 'body';
+
+    if (options.parent && options.parent === 'head') {
+      tag = 'head';
+    }
+
+    tree.match({ tag }, node => {
       let content: INode[] = [];
 
       if (node.content) {
         content = [...node.content];
       }
 
-      content.push({ tag: 'noscript', content: parser(options.content) });
+      content = [
+        { tag: 'noscript', content: parser(options.content) },
+        ...content
+      ];
 
       return { ...node, content };
     });
@@ -23,6 +32,7 @@ function noscript(options?: IOptions) {
 
 interface IOptions {
   content?: string;
+  parent?: 'head';
 }
 
 export { noscript };
