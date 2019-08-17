@@ -1,24 +1,16 @@
-import { INode, ITree } from 'posthtml';
+import { ITree } from 'posthtml';
 import parser from 'posthtml-parser';
 
-function noscript(options?: IOptions) {
-  if (!options || !options.content) {
+function noscript(options: IOptions = { parent: 'body' }) {
+  if (!options.content) {
     throw new Error('An object containing a value for "content" is required');
   }
 
   return function plugin(tree: ITree) {
-    let tag = 'body';
-
-    if (options.parent && options.parent === 'head') {
-      tag = 'head';
-    }
+    const tag = options.parent === 'head' ? 'head' : 'body';
 
     tree.match({ tag }, node => {
-      let content: INode[] = [];
-
-      if (node.content) {
-        content = [...node.content];
-      }
+      let content = node.content ? node.content : [];
 
       content = [
         { tag: 'noscript', content: parser(options.content) },
@@ -32,7 +24,7 @@ function noscript(options?: IOptions) {
 
 interface IOptions {
   content?: string;
-  parent?: 'head';
+  parent?: 'head' | 'body';
 }
 
 export { noscript };
