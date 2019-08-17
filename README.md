@@ -5,7 +5,7 @@
 [![Build][build]][build-badge]
 [![Coverage][codecov-shield]][codecov]
 
-`posthtml-noscript` is a [PostHTML](https://github.com/posthtml/posthtml) plugin to insert [noscript](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) markup.
+`posthtml-noscript` is a [PostHTML](https://github.com/posthtml/posthtml) plugin to insert [noscript](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) content.
 
 **Before:**
 
