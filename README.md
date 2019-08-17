@@ -7,6 +7,8 @@
 
 `posthtml-noscript` is a [PostHTML](https://github.com/posthtml/posthtml) plugin to insert [noscript](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) content.
 
+Use cases include displaying "Enable JavaScript" messages or markup for Single Page Applications and resource link elements.
+
 **Before:**
 
 ```html
@@ -47,20 +49,62 @@ posthtml()
   .then(result => fs.writeFileSync('./after.html', result.html));
 ```
 
-### Options
+## Options
 
-| Name      | Kind                                | Description                                                 |
-| --------- | ----------------------------------- | ----------------------------------------------------------- |
-| `content` | **required** `string`               | Markup to insert in the "noscript" tag                      |
-| `parent`  | optional "head" (default is "body") | Specifiy the parent element to insert the noscript content. |
+By default, the plugin prepends noscript markup inside the body tag.
 
-### Contributing
+Optionally, specify "head" as the parent tag to insert noscript content inside the head tag.
+
+**Before:**
+
+In this example, [Adobe Typekit](https://fonts.adobe.com/) is loaded using JavaScript. Without a resource link fallback, custom fonts won't be loaded.
+
+```html
+<head>
+  <script src="https://use.typekit.net/XYZ.js">
+    try { Typekit.load({ async: true }); } catch(e) {}
+  </script>
+</head>
+```
+
+```js
+const fs = require('fs');
+const posthtml = require('posthtml');
+const { noscript } = require('posthtml-noscript');
+
+const html = fs.readFileSync('./index.html');
+
+posthtml()
+  .use(
+    noscript({
+      content: '<link rel="stylesheet" href="fonts.css" />',
+      parent: 'head'
+    })
+  )
+  .process(html)
+  .then(result => fs.writeFileSync('./after.html', result.html));
+```
+
+**After:**
+
+If JavaScript is disabled, custom fonts can still be loaded.
+
+```html
+<head>
+  <noscript><link rel="stylesheet" href="fonts.css"/></noscript>
+  <script src="https://use.typekit.net/XYZ.js">
+    try { Typekit.load({ async: true }); } catch(e) {}
+  </script>
+</head>
+```
+
+## Contributing
 
 See the [PostHTML Guidelines](https://github.com/posthtml/posthtml/tree/master/docs).
 
 ## [Changelog](CHANGELOG.md)
 
-### License
+## License
 
 [MIT](LICENSE)
 
