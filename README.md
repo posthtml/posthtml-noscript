@@ -7,7 +7,12 @@
 
 `posthtml-noscript` is a [PostHTML](https://github.com/posthtml/posthtml) plugin to insert [noscript](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) content.
 
-Use cases include displaying "Enable JavaScript" messages or markup for Single Page Applications and resource link elements.
+**Use Cases:**
+
+- Display "Enable JavaScript" message in a Single Page Application (SPA)
+- Specify resource link elements (stylesheets etc.) to load if JavaScript is disabled
+
+---
 
 **Before:**
 
