@@ -9,8 +9,8 @@
 
 **Use Cases:**
 
-- Display "Enable JavaScript" message in a Single Page Application (SPA)
-- Specify resource link elements (stylesheets etc.) to load if JavaScript is disabled
+- Display a "Enable JavaScript" message in a Single Page Application (SPA)
+- Specify resource link elements (e.g. stylesheets) to load if JavaScript is disabled
 
 ---
 
@@ -62,7 +62,7 @@ Optionally, specify "head" as the parent tag to insert noscript content inside t
 
 **Before:**
 
-In this example, [Adobe Typekit](https://fonts.adobe.com/) is loaded using JavaScript. Without a resource link fallback, custom fonts won't be loaded.
+In this example, custom fonts are loaded via [Adobe Typekit](https://fonts.adobe.com/) using JavaScript. Without a resource link fallback, custom fonts can't be loaded.
 
 ```html
 <head>
@@ -71,6 +71,8 @@ In this example, [Adobe Typekit](https://fonts.adobe.com/) is loaded using JavaS
   </script>
 </head>
 ```
+
+**Config:**
 
 ```js
 const fs = require('fs');
