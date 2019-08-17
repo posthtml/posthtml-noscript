@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`posthtmlNoscript plugin matches snapshot 1`] = `
+exports[`posthtml-noscript matches the snapshot 1`] = `
 "<body><noscript>You need to enable JavaScript to run this app.</noscript>
           <div id=\\"root\\"></div>
         </body>"
 `;
 
-exports[`posthtmlNoscript plugin matches snapshot – "head" as parent 1`] = `
+exports[`posthtml-noscript matches the snapshot – "head" as parent 1`] = `
 "<head><noscript><link rel=\\"stylesheet\\" href=\\"fonts.css\\"></noscript>
           <script src=\\"https://use.typekit.net/XYZ.js\\">try { Typekit.load({ async: true }); } catch(e) {}</script>
         </head>"

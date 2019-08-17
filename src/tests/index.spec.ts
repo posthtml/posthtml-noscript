@@ -1,15 +1,15 @@
 import posthtml from 'posthtml';
 import { noscript } from '../';
 
-describe('posthtmlNoscript plugin', () => {
-  it('requires a value for content', () => {
+describe('posthtml-noscript', () => {
+  it('throws an error if no argument is present', () => {
     // @ts-ignore
     expect(() => {
       noscript();
     }).toThrowError('An object containing a value for "content" is required');
   });
 
-  it('matches snapshot', () => {
+  it('matches the snapshot', () => {
     posthtml()
       .use(
         noscript({ content: 'You need to enable JavaScript to run this app.' })
@@ -24,7 +24,7 @@ describe('posthtmlNoscript plugin', () => {
       });
   });
 
-  it('matches snapshot – "head" as parent', () => {
+  it('matches the snapshot – "head" as parent', () => {
     posthtml()
       .use(
         noscript({
