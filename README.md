@@ -42,7 +42,7 @@ const { noscript } = require('posthtml-noscript');
 const html = fs.readFileSync('./index.html');
 
 posthtml()
-  .use(noscript())
+  .use(noscript({ content: 'You need to enable JavaScript to run this app.' }))
   .process(html)
   .then(result => fs.writeFileSync('./after.html', result.html));
 ```
