@@ -1,4 +1,4 @@
-import { ITree } from 'posthtml';
+import { PostHTML } from 'posthtml';
 import parser from 'posthtml-parser';
 
 function noscript(options: IOptions = { parent: 'body' }) {
@@ -6,18 +6,16 @@ function noscript(options: IOptions = { parent: 'body' }) {
     throw new Error('An object containing a value for "content" is required');
   }
 
-  return function plugin(tree: ITree) {
+  return function plugin(tree: PostHTML.Node) {
     const tag = options.parent === 'head' ? 'head' : 'body';
 
     tree.match({ tag }, node => {
-      let content = node.content ? node.content : [];
+      if (node.content) {
+        const content = { tag: 'noscript', content: parser(options.content) };
+        node.content.unshift(content as PostHTML.Node);
+      }
 
-      content = [
-        { tag: 'noscript', content: parser(options.content) },
-        ...content
-      ];
-
-      return { ...node, content };
+      return node;
     });
   };
 }

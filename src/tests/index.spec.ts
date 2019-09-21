@@ -19,7 +19,7 @@ describe('posthtml-noscript', () => {
           <div id="root"></div>
         </body>`
       )
-      .then((result: { html: string }) => {
+      .then(result => {
         expect(result.html).toMatchSnapshot();
       });
   });
@@ -37,7 +37,7 @@ describe('posthtml-noscript', () => {
           <script src="https://use.typekit.net/XYZ.js">try { Typekit.load({ async: true }); } catch(e) {}</script>
         </head>`
       )
-      .then((result: { html: string }) => {
+      .then(result => {
         expect(result.html).toMatchSnapshot();
       });
   });
