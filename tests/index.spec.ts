@@ -1,5 +1,5 @@
 import posthtml from 'posthtml';
-import { noscript } from '../';
+import { noscript } from '../src';
 
 describe('posthtml-noscript', () => {
   it('throws an error if no argument is present', () => {
@@ -19,8 +19,8 @@ describe('posthtml-noscript', () => {
           <div id="root"></div>
         </body>`
       )
-      .then(result => {
-        expect(result.html).toMatchSnapshot();
+      .then(({ html }) => {
+        expect(html).toMatchSnapshot();
       });
   });
 
@@ -37,8 +37,8 @@ describe('posthtml-noscript', () => {
           <script src="https://use.typekit.net/XYZ.js">try { Typekit.load({ async: true }); } catch(e) {}</script>
         </head>`
       )
-      .then(result => {
-        expect(result.html).toMatchSnapshot();
+      .then(({ html }) => {
+        expect(html).toMatchSnapshot();
       });
   });
 });
