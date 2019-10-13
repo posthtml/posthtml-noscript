@@ -1,6 +1,6 @@
 {
   "name": "posthtml-noscript",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "MIT",
   "description": "PostHTML plugin to insert noscript content",
   "author": "Eric Liu (https://github.com/metonym)",
