@@ -117,9 +117,9 @@ See the [PostHTML Guidelines](https://github.com/posthtml/posthtml/tree/master/d
 
 [npm]: https://img.shields.io/npm/v/posthtml-noscript.svg?color=blue
 [npm-url]: https://npmjs.com/package/posthtml-noscript
-[deps]: https://david-dm.org/metonym/posthtml-noscript.svg
-[deps-url]: https://david-dm.org/metonym/posthtml-noscript
-[build]: https://travis-ci.com/metonym/posthtml-noscript.svg?branch=master
-[build-badge]: https://travis-ci.com/metonym/posthtml-noscript
-[codecov]: https://codecov.io/gh/metonym/posthtml-noscript
-[codecov-shield]: https://img.shields.io/codecov/c/github/metonym/posthtml-noscript.svg
+[deps]: https://david-dm.org/posthtml/posthtml-noscript.svg
+[deps-url]: https://david-dm.org/posthtml/posthtml-noscript
+[build]: https://travis-ci.com/posthtml/posthtml-noscript.svg?branch=master
+[build-badge]: https://travis-ci.com/posthtml/posthtml-noscript
+[codecov]: https://codecov.io/gh/posthtml/posthtml-noscript
+[codecov-shield]: https://img.shields.io/codecov/c/github/posthtml/posthtml-noscript.svg
