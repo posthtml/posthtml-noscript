@@ -1,4 +1,2 @@
-import { noscript } from './noscript';
-
-export default noscript;
-export { noscript, noscript as posthtmlNoscript };
+export { noscript as default } from "./noscript";
+export { noscript, noscript as posthtmlNoscript } from "./noscript";
