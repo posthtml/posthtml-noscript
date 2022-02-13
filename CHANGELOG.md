@@ -8,13 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.2.4](https://github.com/metonym/posthtml-noscript/releases/tag/v0.2.4) - 2019-10-13
 
 - Upgrade posthtml version from 0.11.6 to 0.12.0
-
 - Upgrade development dependencies (pretty-quick, husky, typescript)
 
 ## [0.2.3](https://github.com/metonym/posthtml-noscript/releases/tag/v0.2.3) - 2019-09-20
 
 - Upgrade posthtml version from 0.11.4 to 0.11.6
-
 - Refactor typings
 
 ## [0.2.2](https://github.com/metonym/posthtml-noscript/releases/tag/v0.2.2) - 2019-08-17
@@ -28,7 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.2.0](https://github.com/metonym/posthtml-noscript/releases/tag/v0.2.0) - 2019-08-17
 
 - Prepend noscript content instead of append
-
 - Accept parent tag option
 
 ## [0.1.1](https://github.com/metonym/posthtml-noscript/releases/tag/v0.1.1) - 2019-08-17
